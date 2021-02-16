@@ -31,5 +31,7 @@
     "react-scripts": "^4.0.2",
     "styled-components": "^5.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@styled-icons/remix-line": "^10.18.0"
+  }
 }

@@ -1,32 +1,46 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import './button.css';
+import styled from 'styled-components';
 
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
-};
+export const Button = ({
+    isInverted = true,
+    icon,
+    children,
+    ...props
+})=> (
+    <SButton isInverted={isInverted} {...props}> 
+        {children.toUpperCase()}
+        {!!icon && <Icon as={icon} />}
+    </SButton>
+);
 
-Button.propTypes = {
-  primary: PropTypes.bool,
-  backgroundColor: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-};
-
-Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  size: 'medium',
-  onClick: undefined,
-};
+const SButton = styled.button`
+    ${({ theme, isInverted }) => `
+        color: ${isInverted ? `${theme.colors.text}` : `${theme.colors.primary}`};
+        border: 1px solid ${theme.colors.primary};
+        font-size: ${theme.size.defaultLarger};
+        font-family: ${theme.font.header};
+        text-decoration: none;
+        cursor: pointer;
+        padding: 0.75rem 2rem 0.5rem 2.5rem;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        border-radius: ${theme.radius.border};
+        transition: ${theme.transitions.cubicBezier};
+        background-color: ${isInverted ? `${theme.colors.primary}` : `${theme.colors.text}`};
+        &:focus,
+        &:active,
+        &:hover {
+            transform: scale(0.9);
+            outline: none;
+        }
+        &:after {
+            display: none !important;
+        }
+    `};
+`;
+const Icon = styled.svg`
+    width: 40px;
+    height: 40px;
+    margin: 0 0 4px 10px;
+`;

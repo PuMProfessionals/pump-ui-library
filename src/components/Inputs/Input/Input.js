@@ -12,7 +12,7 @@ const SInput = styled.input`
     ${({ theme }) => `
         font-size: ${theme.size.default};
         transition: ${theme.transitions.cubicBezier};
-        background-color: ${theme.colors.primaryO};
+        background-color: ${theme.colors.input};
         color: ${theme.colors.hover};
         font-weight: 500;
         font-family: ${theme.font.body};

@@ -2,8 +2,9 @@ import 'styled-components';
 
 export const baseTheme = {
     font: {
-        header: 'gill-sans-nova, sans-serif',
-        body: 'neue-haas-unica, sans-serif',
+        header: 'Josefin Sans, sans-serif',
+        small: 'Oswald, sans-serif',
+        body: 'Lato, sans-serif'
     },
     size: {
         default: '1rem',
@@ -58,17 +59,18 @@ export const baseTheme = {
         `,
     },
     colors: {
-        homebg: '#739284',
-        homebg2:'#8aa59a',
-        primary: '#0f2f24',
-        secondary: '#2d4d42',
+        primary: '#0D1D3F', // navy
+        yellow: '#FEC63D',
+        text: '#F0F3F4',
+        gold: '#FF9C01',
         background: '#efefef',
-        accent: '#d7385e',
-        text: '#393E46',
-        hover: '#718878',
-        primaryO: 'rgba(15,47,36,0.1)',
+        greyBlue: '#465678',
+        input: 'rgba(15,47,36,0.1)',
         success: '#61b15a',
-        error: '#ff4646'
+        error: '#ff4646',
+        pastelNavy: '#8E9EC2',
+        brightBlue: '#53B7F2',
+        turquoise: '#24D0BA'
     },
     boxShadow: {
         shallow: '0 3px 2px 0 rgba(0, 0, 0, 0.15)',
