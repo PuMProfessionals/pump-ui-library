@@ -3,7 +3,7 @@ import { Text } from './Text';
 import styled from 'styled-components';
 
 export default {
-  title: 'Example/Text',
+  title: 'Texts/Text',
   component: Text,
 };
 

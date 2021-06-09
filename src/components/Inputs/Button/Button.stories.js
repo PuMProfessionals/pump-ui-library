@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { ArrowRightS } from '@styled-icons/remix-line/ArrowRightS';
 
 export default {
-  title: 'Example/Button',
+  title: 'Inputs/Button',
   component: Button,
   argTypes: {
     backgroundColor: { control: 'color' },
