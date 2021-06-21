@@ -1,16 +1,16 @@
 import React from 'react';
-import { Button } from './Button';
+import { LegacyButton } from './LegacyButton';
 import { ArrowRightS } from '@styled-icons/remix-line/ArrowRightS';
 
 export default {
-  title: 'Inputs/Button',
-  component: Button,
+  title: 'Inputs/LegacyButton',
+  component: LegacyButton,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => <LegacyButton {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {

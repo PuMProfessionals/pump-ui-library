@@ -7,13 +7,13 @@ export const Button = ({
     children,
     ...props
 })=> (
-    <SButton isInverted={isInverted} {...props}> 
+    <SLegacyButton isInverted={isInverted} {...props}> 
         {children.toUpperCase()}
         {!!icon && <Icon as={icon} />}
-    </SButton>
+    </SLegacyButton>
 );
 
-const SButton = styled.button`
+const SLegacyButton = styled.button`
     ${({ theme, isInverted }) => `
         color: ${isInverted ? `${theme.colors.text}` : `${theme.colors.primary}`};
         border: 1px solid ${theme.colors.primary};
