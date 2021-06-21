@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
             margin: 0;
         }
         body {
-            color: ${theme.colors.primary};
+            color: ${theme.colors.navy};
             font-family: ${theme.font.body};
             overflow-y: scroll;
             -webkit-text-size-adjust: 100%;
@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
         }
         a {
             text-decoration: none;
-            color: ${theme.colors.primary};
+            color: ${theme.colors.navy};
         }
     `};
 `;

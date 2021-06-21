@@ -59,18 +59,15 @@ export const baseTheme = {
         `,
     },
     colors: {
-        primary: '#0D1D3F', // navy
+        navy: '#0D1D3F', 
         yellow: '#FEC63D',
-        text: '#F0F3F4',
         gold: '#FF9C01',
-        background: '#efefef',
         greyBlue: '#465678',
         input: 'rgba(15,47,36,0.1)',
-        success: '#61b15a',
-        error: '#ff4646',
         pastelNavy: '#8E9EC2',
         brightBlue: '#53B7F2',
-        turquoise: '#24D0BA'
+        turquoise: '#24D0BA',
+        text: '#F0F3F4'
     },
     boxShadow: {
         shallow: '0 3px 2px 0 rgba(0, 0, 0, 0.15)',
