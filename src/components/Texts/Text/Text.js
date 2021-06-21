@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Text = ({
     children,
-    color = 'primary',
+    color = 'navy',
     size = 'default',
     lineHeight = '1.25',
     padding,

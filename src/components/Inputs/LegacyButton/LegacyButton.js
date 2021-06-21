@@ -1,22 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const Button = ({
+export const LegacyButton = ({
     isInverted = true,
     icon,
     children,
     ...props
 })=> (
-    <SButton isInverted={isInverted} {...props}> 
+    <SLegacyButton isInverted={isInverted} {...props}> 
         {children.toUpperCase()}
         {!!icon && <Icon as={icon} />}
-    </SButton>
+    </SLegacyButton>
 );
 
-const SButton = styled.button`
+const SLegacyButton = styled.button`
     ${({ theme, isInverted }) => `
-        color: ${isInverted ? `${theme.colors.text}` : `${theme.colors.primary}`};
-        border: 1px solid ${theme.colors.primary};
+        color: ${isInverted ? `${theme.colors.text}` : `${theme.colors.navy}`};
+        border: 1px solid ${theme.colors.navy};
         font-size: ${theme.size.defaultLarger};
         font-family: ${theme.font.header};
         text-decoration: none;
@@ -27,7 +27,7 @@ const SButton = styled.button`
         font-weight: bold;
         border-radius: ${theme.radius.border};
         transition: ${theme.transitions.cubicBezier};
-        background-color: ${isInverted ? `${theme.colors.primary}` : `${theme.colors.text}`};
+        background-color: ${isInverted ? `${theme.colors.navy}` : `${theme.colors.input}`};
         &:focus,
         &:active,
         &:hover {
