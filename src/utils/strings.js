@@ -1,3 +1,6 @@
+/*
+ * Constants / any strings in pump-ui-library
+ */
 export const CONSTANTS = {
     pump: 'PuMP',
     email: 'info@pumprofessionals.org',

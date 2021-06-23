@@ -1,6 +1,7 @@
 /*
- * Media util where breakpoint can be either a string or number (string for themes,
-   and number for px) the styles will be the style at that breakpoint
+ * Media util to help with media queries and save lines
+   @param {string, number} breakpoint - string for themes, numbere for px for breakpoint
+   @param {string} styles - css styles wanted to add
  */
 export const media = (
     breakpoint,
