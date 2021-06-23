@@ -1,30 +1,86 @@
+import { constants } from 'memfs/lib/constants';
 import React from 'react';
 import styled from 'styled-components';
-import PumpLogo from '../../../assets/pump_logo.svg'
+
+import PumpLogo from '../../../assets/pump-logo.svg';
+import { CONSTANTS } from '../../../utils/strings';
+import { Text } from '../../Texts';
 
 export const Footer = ({
-    placeholder,
     ...props
 }) => (
     <FooterContainer {...props}>
-        <Column>
-            <Logo as={PumpLogo} />
-            <h1>Hello</h1> 
-        </Column>
+        <div style={{ padding: "130px 20px 100px 100px" }}>
+            <PumpImg src={PumpLogo} alt="Pump Logo"/>
+            <SText lineHeight="24px" style={{ padding: "20px 0 20px 0" }}>
+                {CONSTANTS.footer.registered_charity_descr}
+            </SText>
+            <SText size="small">
+                {CONSTANTS.footer.copyright}
+            </SText> 
+        </div>
+        <div style={{ padding: "100px 20px 100px 100px" }}>
+            <JosefinText bold size="defaultLarger" style={{ marginBottom: '20px' }}>
+                {CONSTANTS.footer.navigation}
+            </JosefinText>
+            {CONSTANTS.footer.resources.map(resource => (
+                <JosefinText>
+                    {resource}
+                </JosefinText>
+            ))}
+         </div>
+        <div style={{ padding: "100px 100px 100px 20px" }}>
+            <JosefinText bold size="defaultLarger" style={{ marginBottom: '20px' }}>
+                {CONSTANTS.footer.pump}
+            </JosefinText>
+            {CONSTANTS.footer.contact_info.map(contact => (
+                <JosefinText>
+                    {contact}
+                </JosefinText>
+            ))}
+            <LogoContainer>
+                <Logo>
+                    <svg width="92" height="91" viewBox="0 0 92 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="45.7143" cy="45.1557" rx="45.7143" ry="45.1098" fill="#8E9EC2" fill-opacity="0.5"/>
+                    </svg>
+                </Logo>
+                <Logo>
+                    <svg width="92" height="91" viewBox="0 0 92 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="45.7143" cy="45.1557" rx="45.7143" ry="45.1098" fill="#8E9EC2" fill-opacity="0.5"/>
+                    </svg>
+                </Logo>
+            </LogoContainer>
+        </div>
     </FooterContainer>
 );
 
 const FooterContainer = styled.div`
     ${({ theme }) => `
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        font-family: ${theme.font.lato};
         font-size: ${theme.size.default};
+        background-color: ${theme.colors.navy};
         color: ${theme.colors.text}
-        font-family: ${theme.font.body};
-        padding: 20px;
     `};
 `;
-const Column = styled.div`
+const PumpImg = styled.img`
+    width: 150px;
 `;
-const Logo = styled.svg`
-    color: ${theme.colors.navy};
-    margin: 0 0 4px 10px;
+const SText = styled(Text)`
+    ${({ theme }) => `
+        color: ${theme.colors.white};
+    `}
+`;
+const JosefinText = styled(SText)`
+    ${({ theme }) => `
+        font-family: ${theme.font.josefin};
+    `}
+`;
+const LogoContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+const Logo = styled.div`
+    margin-right: 20px;
 `;

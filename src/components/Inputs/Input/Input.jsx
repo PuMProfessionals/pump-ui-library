@@ -14,7 +14,7 @@ const SInput = styled.input`
         transition: ${theme.transitions.cubicBezier};
         background-color: ${theme.colors.input};
         font-weight: 500;
-        font-family: ${theme.font.body};
+        font-family: ${theme.font.lato};
         border-radius: ${theme.radius.border};
         outline: none;
         border: none;
