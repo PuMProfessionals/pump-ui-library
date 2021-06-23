@@ -3,6 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import PumpLogo from '../../../assets/pump-logo.svg';
+import FacebookLogo from '../../../assets/fb.svg';
+import InstagramLogo from '../../../assets/instagram.svg';
 import { CONSTANTS } from '../../../utils/strings';
 import { Text } from '../../Texts';
 
@@ -24,7 +26,7 @@ export const Footer = ({
                 {CONSTANTS.footer.navigation}
             </JosefinText>
             {CONSTANTS.footer.resources.map(resource => (
-                <JosefinText>
+                <JosefinText key={resource}>
                     {resource}
                 </JosefinText>
             ))}
@@ -34,20 +36,16 @@ export const Footer = ({
                 {CONSTANTS.footer.pump}
             </JosefinText>
             {CONSTANTS.footer.contact_info.map(contact => (
-                <JosefinText>
+                <JosefinText key={contact}>
                     {contact}
                 </JosefinText>
             ))}
             <LogoContainer>
                 <Logo>
-                    <svg width="92" height="91" viewBox="0 0 92 91" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <ellipse cx="45.7143" cy="45.1557" rx="45.7143" ry="45.1098" fill="#8E9EC2" fill-opacity="0.5"/>
-                    </svg>
+                    <img src={FacebookLogo} alt="Facebook Logo" />
                 </Logo>
                 <Logo>
-                    <svg width="92" height="91" viewBox="0 0 92 91" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <ellipse cx="45.7143" cy="45.1557" rx="45.7143" ry="45.1098" fill="#8E9EC2" fill-opacity="0.5"/>
-                    </svg>
+                    <img src={InstagramLogo} alt="Instagram Logo" />
                 </Logo>
             </LogoContainer>
         </div>
