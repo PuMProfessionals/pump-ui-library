@@ -5,14 +5,14 @@ import styled from 'styled-components';
 import PumpLogo from '../../../assets/pump-logo.svg';
 import FacebookLogo from '../../../assets/fb.svg';
 import InstagramLogo from '../../../assets/instagram.svg';
-import { CONSTANTS } from '../../../utils/strings';
+import { CONSTANTS, media } from '../../../utils';
 import { Text } from '../../Texts';
 
 export const Footer = ({
     ...props
 }) => (
     <FooterContainer {...props}>
-        <div style={{ padding: "130px 20px 100px 100px" }}>
+        <FirstColumn>
             <PumpImg src={PumpLogo} alt="Pump Logo"/>
             <SText lineHeight="24px" style={{ padding: "20px 0 20px 0" }}>
                 {CONSTANTS.footer.registered_charity_descr}
@@ -20,8 +20,8 @@ export const Footer = ({
             <SText size="small">
                 {CONSTANTS.footer.copyright}
             </SText> 
-        </div>
-        <div style={{ padding: "100px 20px 100px 100px" }}>
+        </FirstColumn>
+        <SecondColumn>
             <JosefinText bold size="defaultLarger" style={{ marginBottom: '20px' }}>
                 {CONSTANTS.footer.navigation}
             </JosefinText>
@@ -30,8 +30,8 @@ export const Footer = ({
                     {resource}
                 </JosefinText>
             ))}
-         </div>
-        <div style={{ padding: "100px 100px 100px 20px" }}>
+         </SecondColumn>
+        <ThirdColumn>
             <JosefinText bold size="defaultLarger" style={{ marginBottom: '20px' }}>
                 {CONSTANTS.footer.pump}
             </JosefinText>
@@ -42,13 +42,13 @@ export const Footer = ({
             ))}
             <LogoContainer>
                 <Logo>
-                    <img src={FacebookLogo} alt="Facebook Logo" />
+                    <SocialMedia src={FacebookLogo} alt="Facebook Logo" />
                 </Logo>
                 <Logo>
-                    <img src={InstagramLogo} alt="Instagram Logo" />
+                    <SocialMedia src={InstagramLogo} alt="Instagram Logo" />
                 </Logo>
             </LogoContainer>
-        </div>
+        </ThirdColumn>
     </FooterContainer>
 );
 
@@ -61,6 +61,22 @@ const FooterContainer = styled.div`
         background-color: ${theme.colors.navy};
         color: ${theme.colors.text}
     `};
+
+    ${media(
+        900,
+        `
+        display: flex;
+        flex-direction: column;
+        justify-contents: center;
+        padding: 100px;
+        `
+    )};
+    ${media(
+        'mobile',
+        `
+        padding: 40px 50px;
+        `
+    )};
 `;
 const PumpImg = styled.img`
     width: 150px;
@@ -69,6 +85,12 @@ const SText = styled(Text)`
     ${({ theme }) => `
         color: ${theme.colors.white};
     `}
+    ${media(
+        'mobile',
+        `
+        line-height: 1.3;
+        `
+    )};
 `;
 const JosefinText = styled(SText)`
     ${({ theme }) => `
@@ -81,4 +103,42 @@ const LogoContainer = styled.div`
 `;
 const Logo = styled.div`
     margin-right: 20px;
+`;
+const SocialMedia = styled.img`
+    ${media(
+        'mobile',
+        `
+        width: 70%;
+        `
+    )};
+    :hover {
+        opacity: 80%;
+    }
+`;
+const FirstColumn = styled.div`
+    padding: 130px 20px 100px 100px;
+    ${media(
+        900,
+        `
+        padding: 20px 0 0 0;
+        `
+    )};
+`;
+const SecondColumn = styled.div`
+    padding: 100px 20px 100px 100px;
+    ${media(
+        900,
+        `
+        padding: 0;
+        `
+    )};
+`;
+const ThirdColumn = styled.div`
+    padding: 100px 100px 100px 20px;
+    ${media(
+        900,
+        `
+        padding: 0 0 20px 0;
+        `
+    )};
 `;
