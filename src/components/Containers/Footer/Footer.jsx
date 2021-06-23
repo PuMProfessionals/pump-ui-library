@@ -25,6 +25,7 @@ export const Footer = ({
             <JosefinText bold size="defaultLarger" style={{ marginBottom: '20px' }}>
                 {CONSTANTS.footer.navigation}
             </JosefinText>
+            {/* TODO: need to add links to appropriate pages */}
             {CONSTANTS.footer.resources.map(resource => (
                 <JosefinText key={resource}>
                     {resource}
@@ -33,20 +34,28 @@ export const Footer = ({
          </SecondColumn>
         <ThirdColumn>
             <JosefinText bold size="defaultLarger" style={{ marginBottom: '20px' }}>
-                {CONSTANTS.footer.pump}
+                {CONSTANTS.pump}
             </JosefinText>
-            {CONSTANTS.footer.contact_info.map(contact => (
-                <JosefinText key={contact}>
-                    {contact}
-                </JosefinText>
-            ))}
+            <a href={`mailto:${CONSTANTS.footer.email}`}>
+                <Email>
+                    {CONSTANTS.email}
+                </Email>
+            </a>
+            <Address>
+                {CONSTANTS.footer.address}
+            </Address>
             <LogoContainer>
-                <Logo>
-                    <SocialMedia src={FacebookLogo} alt="Facebook Logo" />
-                </Logo>
-                <Logo>
-                    <SocialMedia src={InstagramLogo} alt="Instagram Logo" />
-                </Logo>
+                {/* REMOVE IN PROD:doc: https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/*/}
+                <a href={CONSTANTS.facebook} target="_blank" rel="noopener noreferrer">
+                    <Logo>
+                        <SocialMedia src={FacebookLogo} alt="Facebook Logo" />
+                    </Logo>
+                </a>
+                <a href={CONSTANTS.instagram} target="_blank" rel="noopener noreferrer">
+                    <Logo>
+                        <SocialMedia src={InstagramLogo} alt="Instagram Logo" />
+                    </Logo>
+                </a>
             </LogoContainer>
         </ThirdColumn>
     </FooterContainer>
@@ -92,10 +101,24 @@ const SText = styled(Text)`
         `
     )};
 `;
-const JosefinText = styled(SText)`
+const Address = styled(SText)`
     ${({ theme }) => `
         font-family: ${theme.font.josefin};
-    `}
+    `};
+`;
+const JosefinText = styled(SText)`
+    :hover {
+        opacity: 70%;
+        cursor: pointer;
+    }
+`;
+const Email = styled(JosefinText)`
+    text-decoration: underline;
+    ${({ theme }) => `
+        :hover {
+            color: ${theme.colors.brightBlue};
+        }
+    `};
 `;
 const LogoContainer = styled.div`
     display: flex;

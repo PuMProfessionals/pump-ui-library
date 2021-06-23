@@ -1,4 +1,8 @@
 export const CONSTANTS = {
+    pump: 'PuMP',
+    email: 'info@pumprofessionals.org',
+    facebook: 'https://www.facebook.com/pumprofessionals/',
+    instagram: 'https://www.instagram.com/pumpprofessionals/?hl=en',
     footer: {
         registered_charity_descr: "A registered charity dedicated to connecting aspiring students to health sciences opportunities",
         copyright: "© 2021 Prospective Medical Professionals",
@@ -11,11 +15,7 @@ export const CONSTANTS = {
             'Partners',
             'Donate'
         ],
-        pump: 'PuMP',
-        contact_info: [
-            'info@pumprofessionals.org',
-            'Richmond Hill, Ontario'
-        ]
-    }
-}
+        address: 'Richmond Hill, Ontario',
+    },
+};
  
