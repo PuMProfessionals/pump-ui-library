@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
         }
         body {
             color: ${theme.colors.navy};
-            font-family: ${theme.font.body};
+            font-family: ${theme.font.lato};
             overflow-y: scroll;
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;

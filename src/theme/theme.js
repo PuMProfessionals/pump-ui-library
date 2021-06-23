@@ -2,9 +2,9 @@ import 'styled-components';
 
 export const baseTheme = {
     font: {
-        header: 'Josefin Sans, sans-serif',
-        small: 'Oswald, sans-serif',
-        body: 'Lato, sans-serif'
+        josefin: 'Josefin Sans, sans-serif',
+        oswald: 'Oswald, sans-serif',
+        lato: 'Lato, sans-serif'
     },
     size: {
         default: '1rem',
@@ -67,7 +67,8 @@ export const baseTheme = {
         pastelNavy: '#8E9EC2',
         brightBlue: '#53B7F2',
         turquoise: '#24D0BA',
-        text: '#F0F3F4'
+        text: '#F0F3F4',
+        white: '#FFFFFF'
     },
     boxShadow: {
         shallow: '0 3px 2px 0 rgba(0, 0, 0, 0.15)',

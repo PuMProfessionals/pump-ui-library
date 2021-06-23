@@ -18,7 +18,7 @@ const SLegacyButton = styled.button`
         color: ${isInverted ? `${theme.colors.text}` : `${theme.colors.navy}`};
         border: 1px solid ${theme.colors.navy};
         font-size: ${theme.size.defaultLarger};
-        font-family: ${theme.font.header};
+        font-family: ${theme.font.josefin};
         text-decoration: none;
         cursor: pointer;
         padding: 0.75rem 2rem 0.5rem 2.5rem;
