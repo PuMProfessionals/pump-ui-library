@@ -22,9 +22,9 @@ export const Footer = ({
             </SText> 
         </FirstColumn>
         <SecondColumn>
-            <JosefinText bold size="defaultLarger" style={{ marginBottom: '20px' }}>
+            <JosefinNoHoverText bold size="defaultLarger" style={{ marginBottom: '20px' }}>
                 {CONSTANTS.footer.navigation}
-            </JosefinText>
+            </JosefinNoHoverText>
             {/* TODO: need to add links to appropriate pages */}
             {CONSTANTS.footer.resources.map(resource => (
                 <JosefinText key={resource}>
@@ -33,17 +33,17 @@ export const Footer = ({
             ))}
          </SecondColumn>
         <ThirdColumn>
-            <JosefinText bold size="defaultLarger" style={{ marginBottom: '20px' }}>
+            <JosefinNoHoverText bold size="defaultLarger" style={{ marginBottom: '20px' }}>
                 {CONSTANTS.pump}
-            </JosefinText>
+            </JosefinNoHoverText>
             <a href={`mailto:${CONSTANTS.footer.email}`}>
                 <Email>
                     {CONSTANTS.email}
                 </Email>
             </a>
-            <Address>
+            <JosefinNoHoverText>
                 {CONSTANTS.footer.address}
-            </Address>
+            </JosefinNoHoverText>
             <LogoContainer>
                 {/* REMOVE IN PROD:doc: https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/*/}
                 <a href={CONSTANTS.facebook} target="_blank" rel="noopener noreferrer">
@@ -101,12 +101,12 @@ const SText = styled(Text)`
         `
     )};
 `;
-const Address = styled(SText)`
+const JosefinNoHoverText = styled(SText)`
     ${({ theme }) => `
         font-family: ${theme.font.josefin};
     `};
 `;
-const JosefinText = styled(SText)`
+const JosefinText = styled(JosefinNoHoverText)`
     :hover {
         opacity: 70%;
         cursor: pointer;
