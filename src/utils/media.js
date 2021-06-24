@@ -6,4 +6,4 @@
 export const media = (breakpoint, styles) => ({ theme }) => `
     @media (max-width: ${theme.media[breakpoint] || breakpoint}px) {
             ${styles}
-}`
+}`;

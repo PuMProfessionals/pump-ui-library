@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import PropTypes from "prop-types"
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 export const Text = ({
   children,
@@ -12,7 +12,7 @@ export const Text = ({
   <SText size={size} color={color} lineHeight={lineHeight} {...props}>
     {children}
   </SText>
-)
+);
 
 const SText = styled.p`
   ${({ theme, bold, lineHeight, color = "text", size = "default" }) => `
@@ -21,7 +21,7 @@ const SText = styled.p`
         line-height: ${lineHeight || 1.25};
         font-weight: ${bold ? "bold" : "normal"};
     `}
-`
+`;
 
 Text.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
@@ -29,4 +29,4 @@ Text.propTypes = {
   color: PropTypes.string,
   size: PropTypes.string,
   lineHeight: PropTypes.string,
-}
+};

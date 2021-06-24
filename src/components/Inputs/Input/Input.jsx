@@ -1,10 +1,10 @@
-import React from "react"
-import styled from "styled-components"
-import PropTypes from "prop-types"
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 export const Input = ({ placeholder, ...props }) => (
   <SInput placeholder={placeholder} {...props} />
-)
+);
 
 const SInput = styled.input`
   ${({ theme }) => `
@@ -36,8 +36,8 @@ const SInput = styled.input`
             color: ${theme.colors.caption};
         }
     `};
-`
+`;
 
 Input.propTypes = {
   placeholder: PropTypes.string,
-}
+};

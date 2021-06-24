@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import PropTypes from "prop-types"
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 
 export const LegacyButton = ({
   isInverted = true,
@@ -13,7 +13,7 @@ export const LegacyButton = ({
     {children.toUpperCase()}
     {!!icon && <Icon as={icon} />}
   </SLegacyButton>
-)
+);
 
 const SLegacyButton = styled.button`
   ${({ theme, isInverted }) => `
@@ -42,16 +42,16 @@ const SLegacyButton = styled.button`
             display: none !important;
         }
     `};
-`
+`;
 const Icon = styled.svg`
   width: 40px;
   height: 40px;
   margin: 0 0 4px 10px;
-`
+`;
 
 LegacyButton.propTypes = {
   isInverted: PropTypes.bool,
   icon: PropTypes.element,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
     .isRequired,
-}
+};
