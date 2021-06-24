@@ -13,6 +13,9 @@
     "format": "prettier-eslint --eslint-config-path ./.eslintrc.json --write src/**/*.js src/**/*.jsx src/**/*.stories.js",
     "prepare": "husky install"
   },
+  "husky": {
+    "pre-commit": "echo '[Husky] pre-commit' && npm run lint && npm run format"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PuMProfessionals/pump-ui-library.git"
