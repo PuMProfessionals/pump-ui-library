@@ -72,7 +72,7 @@ const FooterContainer = styled.div`
     `};
 
     ${media(
-        900,
+        'tablet',
         `
         display: flex;
         flex-direction: column;
@@ -141,7 +141,7 @@ const SocialMedia = styled.img`
 const FirstColumn = styled.div`
     padding: 130px 20px 100px 100px;
     ${media(
-        900,
+        'tablet',
         `
         padding: 20px 0 0 0;
         `
@@ -150,7 +150,7 @@ const FirstColumn = styled.div`
 const SecondColumn = styled.div`
     padding: 100px 20px 100px 100px;
     ${media(
-        900,
+        'tablet',
         `
         padding: 0;
         `
@@ -159,7 +159,7 @@ const SecondColumn = styled.div`
 const ThirdColumn = styled.div`
     padding: 100px 100px 100px 20px;
     ${media(
-        900,
+        'tablet',
         `
         padding: 0 0 20px 0;
         `
