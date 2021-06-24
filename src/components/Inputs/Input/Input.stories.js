@@ -6,9 +6,9 @@ export default {
   component: Input,
 };
 
-const Template = (args) => <Input style={{ width: '300px' }} {...args} />;
+const Template = args => <Input style={{ width: '300px' }} {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    placeholder: 'Enter your thoughts here',
+  placeholder: 'Enter your thoughts here',
 };

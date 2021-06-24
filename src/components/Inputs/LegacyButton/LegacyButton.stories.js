@@ -10,17 +10,17 @@ export default {
   },
 };
 
-const Template = (args) => <LegacyButton {...args} />;
+const Template = args => <LegacyButton {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
   children: 'Our Work',
-  icon: ArrowRightS
+  icon: ArrowRightS,
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   children: 'Our Partners',
   isInverted: false,
-  icon: ArrowRightS
+  icon: ArrowRightS,
 };

@@ -7,17 +7,15 @@ export default {
   component: Text,
 };
 
-const Template = (args) => (
-    <SText {...args}> Title </SText>
-);
+const Template = args => <SText {...args}> Title </SText>;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    lineHeight: 1.25,
-    bold: true,
-    size: 'h1'
+  lineHeight: 1.25,
+  bold: true,
+  size: 'h1',
 };
 
 const SText = styled(Text)`
-    padding: 0 30px;
+  padding: 0 30px;
 `;
