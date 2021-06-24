@@ -22,7 +22,7 @@ export const baseTheme = {
     media: {
         small: '325',
         mobile: '414',
-        tablet: '834',
+        tablet: '900',
         laptop: '1480',
         desktop: '2560'
     },
