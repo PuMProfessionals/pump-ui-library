@@ -1,14 +1,14 @@
-import React from 'react';
-import { Input } from './Input';
+import React from "react";
+import { Input } from "./Input";
 
 export default {
-  title: 'Inputs/Input',
+  title: "Inputs/Input",
   component: Input,
 };
 
-const Template = args => <Input style={{ width: '300px' }} {...args} />;
+const Template = (args) => <Input style={{ width: "300px" }} {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  placeholder: 'Enter your thoughts here',
+  placeholder: "Enter your thoughts here",
 };

@@ -14,4 +14,4 @@ export const CONSTANTS = {
     resources: ["Home", "About Us", "Resources", "Events", "Partners", "Donate"],
     address: "Richmond Hill, Ontario",
   },
-}
+};

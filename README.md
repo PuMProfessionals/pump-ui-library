@@ -1,9 +1,11 @@
 # pump-ui-library-deploy
 
-### Steps to clone: 
+### Steps to clone:
+
 Please make sure to follow steps listed here to get a repo cloned: https://github.com/PuMProfessionals/github-git-practice
 
 Everything else should pretty much be the exact same up to the cloning part. Please make sure you can list `npm start` on your command line. On your browser it should appear:
+
 <div align="center">
   <img width="500" alt="Screen Shot 2021-03-05 at 5 22 35 PM" src="https://user-images.githubusercontent.com/62865150/110180240-691ed100-7dd7-11eb-863f-ee390841a9b0.png">
 <div>

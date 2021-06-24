@@ -1,2 +1,2 @@
-export { media } from "./media"
-export { CONSTANTS } from "./strings"
+export { media } from "./media";
+export { CONSTANTS } from "./strings";

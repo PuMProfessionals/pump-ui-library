@@ -8,10 +8,13 @@
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token ed1270bcd049",
-    "lint": "eslint src/**/*.js src/**/*.jsx",
-    "lint:fix": "eslint --fix src/**/*.js src/**/*.jsx",
-    "format": "prettier-eslint --eslint-config-path ./.eslintrc.json --write src/**/*.js src/**/*.jsx",
+    "lint": "eslint src/**/*.js src/**/*.jsx src/**/*.stories.js",
+    "lint:fix": "eslint --fix src/**/*.js src/**/*.jsx src/**/*.stories.js",
+    "format": "prettier-eslint --eslint-config-path ./.eslintrc.json --write src/**/*.js src/**/*.jsx src/**/*.stories.js",
     "prepare": "husky install"
+  },
+  "husky": {
+    "pre-commit": "echo '[Husky] pre-commit' && npm run lint && npm run format"
   },
   "repository": {
     "type": "git",

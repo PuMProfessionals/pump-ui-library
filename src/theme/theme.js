@@ -1,4 +1,4 @@
-import "styled-components"
+import "styled-components";
 
 export const baseTheme = {
   font: {
@@ -74,4 +74,4 @@ export const baseTheme = {
     shallow: "0 3px 2px 0 rgba(0, 0, 0, 0.15)",
     topBottom: "0px 8px 5px rgba(0, 0, 0, 0.15), 0px -5px 5px rgba(0, 0, 0, 0.15)",
   },
-}
+};

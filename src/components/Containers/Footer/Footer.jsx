@@ -1,11 +1,11 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import PumpLogo from "../../../assets/pump-logo.svg"
-import FacebookLogo from "../../../assets/fb.svg"
-import InstagramLogo from "../../../assets/instagram.svg"
-import { CONSTANTS, media } from "../../../utils"
-import { Text } from "../../Texts"
+import PumpLogo from "../../../assets/pump-logo.svg";
+import FacebookLogo from "../../../assets/fb.svg";
+import InstagramLogo from "../../../assets/instagram.svg";
+import { CONSTANTS, media } from "../../../utils";
+import { Text } from "../../Texts";
 
 export const Footer = ({ ...props }) => (
   <FooterContainer {...props}>
@@ -48,7 +48,7 @@ export const Footer = ({ ...props }) => (
       </LogoContainer>
     </ThirdColumn>
   </FooterContainer>
-)
+);
 
 const FooterContainer = styled.div`
   ${({ theme }) => `
@@ -75,10 +75,10 @@ const FooterContainer = styled.div`
         padding: 40px 50px;
         `
   )};
-`
+`;
 const PumpImg = styled.img`
   width: 150px;
-`
+`;
 const SText = styled(Text)`
   ${({ theme }) => `
         color: ${theme.colors.white};
@@ -89,18 +89,18 @@ const SText = styled(Text)`
         line-height: 1.3;
         `
   )};
-`
+`;
 const JosefinNoHoverText = styled(SText)`
   ${({ theme }) => `
         font-family: ${theme.font.josefin};
     `};
-`
+`;
 const JosefinText = styled(JosefinNoHoverText)`
   :hover {
     opacity: 70%;
     cursor: pointer;
   }
-`
+`;
 const Email = styled(JosefinText)`
   text-decoration: underline;
   ${({ theme }) => `
@@ -108,14 +108,14 @@ const Email = styled(JosefinText)`
             color: ${theme.colors.brightBlue};
         }
     `};
-`
+`;
 const LogoContainer = styled.div`
   display: flex;
   flex-direction: row;
-`
+`;
 const Logo = styled.div`
   margin-right: 20px;
-`
+`;
 const SocialMedia = styled.img`
   ${media(
     "mobile",
@@ -126,7 +126,7 @@ const SocialMedia = styled.img`
   :hover {
     opacity: 80%;
   }
-`
+`;
 const FirstColumn = styled.div`
   padding: 130px 20px 100px 100px;
   ${media(
@@ -135,7 +135,7 @@ const FirstColumn = styled.div`
         padding: 20px 0 0 0;
         `
   )};
-`
+`;
 const SecondColumn = styled.div`
   padding: 100px 20px 100px 100px;
   ${media(
@@ -144,7 +144,7 @@ const SecondColumn = styled.div`
         padding: 0;
         `
   )};
-`
+`;
 const ThirdColumn = styled.div`
   padding: 100px 100px 100px 20px;
   ${media(
@@ -153,4 +153,4 @@ const ThirdColumn = styled.div`
         padding: 0 0 20px 0;
         `
   )};
-`
+`;
