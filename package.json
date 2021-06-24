@@ -10,12 +10,8 @@
     "chromatic": "npx chromatic --project-token ed1270bcd049",
     "lint": "eslint src/**/*.js src/**/*.jsx",
     "lint:fix": "eslint --fix src/**/*.js src/**/*.jsx",
-    "format": "prettier-eslint --eslint-config-path ./.eslintrc.json --write src/**/*.js src/**/*.jsx"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo '[Husky] pre-commit' && npm run lint && npm run format"
-    }
+    "format": "prettier-eslint --eslint-config-path ./.eslintrc.json --write src/**/*.js src/**/*.jsx",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
