@@ -4,16 +4,14 @@ import styled from 'styled-components';
 
 export default {
   title: 'Containers/Footer',
-  component: Footer
+  component: Footer,
 };
 
-const Template = (args) => (
-    <Footer {...args} />
-);
+const Template = args => <Footer {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    lineHeight: 1.25,
-    bold: true,
-    size: 'h1'
+  lineHeight: 1.25,
+  bold: true,
+  size: 'h1',
 };

@@ -7,14 +7,22 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token ed1270bcd049"
+    "chromatic": "npx chromatic --project-token ed1270bcd049",
+    "lint": "eslint src/**/*.js src/**/*.jsx",
+    "lint:fix": "eslint --fix src/**/*.js src/**/*.jsx",
+    "format": "prettier-eslint --eslint-config-path ./.eslintrc.json --write src/**/*.js src/**/*.jsx"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format"
+    }
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PuMProfessionals/pump-ui-library.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "PuMP Professionals Tech Team",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/PuMProfessionals/pump-ui-library/issues"
@@ -28,6 +36,14 @@
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
     "chromatic": "^5.6.2",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "husky": "^6.0.0",
+    "prettier": "^2.2.1",
+    "prettier-eslint": "^12.0.0",
+    "prettier-eslint-cli": "^5.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "^4.0.2",

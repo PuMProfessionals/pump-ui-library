@@ -1,20 +1,22 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
+import PropTypes from "prop-types"
 
 export const LegacyButton = ({
-    isInverted = true,
-    icon,
-    children,
-    ...props
-})=> (
-    <SLegacyButton isInverted={isInverted} {...props}> 
-        {children.toUpperCase()}
-        {!!icon && <Icon as={icon} />}
-    </SLegacyButton>
-);
+  isInverted = true,
+  /* eslint-disable react/prop-types */
+  icon, // Styled Icon type
+  children,
+  ...props
+}) => (
+  <SLegacyButton isInverted={isInverted} {...props}>
+    {children.toUpperCase()}
+    {!!icon && <Icon as={icon} />}
+  </SLegacyButton>
+)
 
 const SLegacyButton = styled.button`
-    ${({ theme, isInverted }) => `
+  ${({ theme, isInverted }) => `
         color: ${isInverted ? `${theme.colors.text}` : `${theme.colors.navy}`};
         border: 1px solid ${theme.colors.navy};
         font-size: ${theme.size.defaultLarger};
@@ -27,7 +29,9 @@ const SLegacyButton = styled.button`
         font-weight: bold;
         border-radius: ${theme.radius.border};
         transition: ${theme.transitions.cubicBezier};
-        background-color: ${isInverted ? `${theme.colors.navy}` : `${theme.colors.input}`};
+        background-color: ${
+          isInverted ? `${theme.colors.navy}` : `${theme.colors.input}`
+        };
         &:focus,
         &:active,
         &:hover {
@@ -38,9 +42,16 @@ const SLegacyButton = styled.button`
             display: none !important;
         }
     `};
-`;
+`
 const Icon = styled.svg`
-    width: 40px;
-    height: 40px;
-    margin: 0 0 4px 10px;
-`;
+  width: 40px;
+  height: 40px;
+  margin: 0 0 4px 10px;
+`
+
+LegacyButton.propTypes = {
+  isInverted: PropTypes.bool,
+  icon: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+    .isRequired,
+}
