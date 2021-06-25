@@ -1,36 +1,37 @@
 import "styled-components";
 
 export const baseTheme = {
-  font: {
-    josefin: "Josefin Sans, sans-serif",
-    oswald: "Oswald, sans-serif",
-    lato: "Lato, sans-serif",
-  },
-  size: {
-    default: "1rem",
-    small: "0.85rem",
-    h1: "2rem",
-    h2: "1.75rem",
-    h3: "1.3rem",
-    defaultLarger: "1.5rem",
-    large: "2.5rem",
-  },
-  radius: {
-    default: "8px",
-    border: "20px",
-  },
-  media: {
-    small: "325",
-    mobile: "414",
-    tablet: "900",
-    laptop: "1480",
-    desktop: "2560",
-  },
-  transitions: {
-    cubicBezier: "all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)",
-    opacity: "opacity ease 500ms",
-    scale: "scale(1.03)",
-    easeIn: `
+    font: {
+        josefin: 'Josefin Sans, sans-serif',
+        oswald: 'Oswald, sans-serif',
+        lato: 'Lato, sans-serif'
+    },
+    size: {
+        default: '1rem',
+        small: '0.85rem',
+        h1: '2rem',
+        h2: '1.75rem',
+        h3: '1.3rem',
+        defaultLarger: '1.5rem',
+        large: '2.5rem',
+    },
+    radius: {
+        default: '8px',
+        border: '20px',
+        circular: '100px',
+    },
+    media: {
+        small: '325',
+        mobile: '414',
+        tablet: '834',
+        laptop: '1480',
+        desktop: '2560'
+    },
+    transitions: {
+        cubicBezier: 'all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1)',
+        opacity: 'opacity ease 500ms',
+        scale: 'scale(1.03)',
+        easeIn: `
             animation: fadeIn ease 0.5s;
             -webkit-animation: fadeIn ease 0.5s;
             -moz-animation: fadeIn ease 0.5s;
