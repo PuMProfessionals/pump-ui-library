@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from "prop-types";
 
 export const Button = ({
-    /* eslint-disable react/prop-types */
-    textColor,
+    color,
     backgroundColor,
-    text,
+    children,
     ...props
 }) => (
-    <SButton textColor={textColor} backgroundColor={backgroundColor} {...props}>
-        {text}
+    <SButton color={color} backgroundColor={backgroundColor} {...props}>
+        {children}
     </SButton>
 );
 
 const SButton = styled.button`
-    ${({theme, textColor, backgroundColor }) => `
+    ${({theme, color="navy", backgroundColor="yellow" }) => `
         display: flex;
         font-family: ${theme.font.josefin};
         font-size: ${theme.size.defaultLarger};
@@ -23,8 +23,8 @@ const SButton = styled.button`
         border: none;
         align-items: center;
         transition: ${theme.transitions.cubicBezier};
-        color: ${textColor};
-        background-color: ${backgroundColor};
+        color: ${theme.colors[color] || color};
+        background-color: ${theme.colors[backgroundColor] || backgroundColor};
         &:focus,
         &:active,
         &:hover {
@@ -36,3 +36,10 @@ const SButton = styled.button`
         }
     `};
 `;
+
+Button.propTypes = {
+    children: PropTypes.string.isRequired,
+    backgroundColor: PropTypes.string,
+    color: PropTypes.string,
+  };
+  
