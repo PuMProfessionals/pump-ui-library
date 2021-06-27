@@ -9,8 +9,4 @@ export default {
 const Template = (args) => <Footer {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-  lineHeight: 1.25,
-  bold: true,
-  size: "h1",
-};
+Primary.args = {};
