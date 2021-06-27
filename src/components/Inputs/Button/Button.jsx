@@ -2,16 +2,35 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-export const Button = ({ isInverted = true, children, ...props }) => (
-  <SButton isInverted={isInverted} {...props}>
+export const Button = ({
+  /* eslint-disable react/prop-types */
+  icon, // Styled Icon type
+  color,
+  backgroundColor,
+  borderColor,
+  children,
+  ...props
+}) => (
+  <SButton
+    color={color}
+    backgroundColor={backgroundColor}
+    borderColor={borderColor}
+    {...props}
+  >
     {children}
+    {!!icon && <Icon as={icon} />}
   </SButton>
 );
 
 const SButton = styled.button`
-  ${({ theme, isInverted }) => `
-        color: ${theme.colors.navy};
-        border: 1px solid ${theme.colors.yellow};
+  ${({
+    theme,
+    color = "navy",
+    backgroundColor = "yellow",
+    borderColor = "yellow",
+  }) => `
+        color: ${theme.colors[color] || color};
+        border: 1px solid ${theme.colors[borderColor] || borderColor};
         font-size: ${theme.size.default};
         font-family: ${theme.font.josefin};
         text-decoration: none;
@@ -22,9 +41,7 @@ const SButton = styled.button`
         text-align: center;
         border-radius: ${theme.radius.button};
         transition: ${theme.transitions.cubicBezier};
-        background-color: ${
-          isInverted ? `${theme.colors.yellow}` : `${theme.colors.white}`
-        };
+        background-color: ${theme.colors[backgroundColor] || backgroundColor};
         &:focus,
         &:active,
         &:hover {
@@ -36,10 +53,17 @@ const SButton = styled.button`
         }
     `};
 `;
+const Icon = styled.svg`
+  width: 40px;
+  height: 40px;
+  margin: 0 0 4px 10px;
+`;
 
 Button.propTypes = {
-  isInverted: PropTypes.bool,
   icon: PropTypes.element,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
     .isRequired,
+  borderColor: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  color: PropTypes.string,
 };
