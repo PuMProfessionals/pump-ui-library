@@ -21,7 +21,7 @@ export const Footer = ({ ...props }) => (
         {CONSTANTS.footer.navigation}
       </JosefinNoHoverText>
       {/* TODO: need to add links to appropriate pages */}
-      {CONSTANTS.footer.resources.map((resource) => (
+      {CONSTANTS.resources.map((resource) => (
         <JosefinText key={resource}>{resource}</JosefinText>
       ))}
     </SecondColumn>
@@ -65,7 +65,7 @@ const FooterContainer = styled.div`
     `
         display: flex;
         flex-direction: column;
-        justify-contents: center;
+        justify-content: center;
         padding: 100px;
         `
   )};
