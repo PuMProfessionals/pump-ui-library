@@ -49,6 +49,8 @@
     "styled-components": "^5.2.1"
   },
   "dependencies": {
+    "@styled-icons/entypo": "^10.34.0",
+    "@styled-icons/ionicons-outline": "^10.34.0",
     "@styled-icons/remix-line": "^10.18.0"
   }
 }

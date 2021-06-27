@@ -4,14 +4,11 @@ import PropTypes from "prop-types";
 
 export const Button = ({
   isInverted = true,
-  /* eslint-disable react/prop-types */
-  icon, // Styled Icon type
   children,
   ...props
 }) => (
   <SButton isInverted={isInverted} {...props}>
     {children}
-    {!!icon && <Icon as={icon} />}
   </SButton>
 );
 
@@ -42,11 +39,6 @@ const SButton = styled.button`
             display: none !important;
         }
     `};
-`;
-const Icon = styled.svg`
-  width: 40px;
-  height: 40px;
-  margin: 0 0 4px 10px;
 `;
 
 Button.propTypes = {
