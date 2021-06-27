@@ -11,6 +11,6 @@ const Template = (args) => <Navbar {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    backgroundColor: baseTheme.colors.greyBlue,
-    fontColor: baseTheme.colors.white,
+  backgroundColor: baseTheme.colors.greyBlue,
+  fontColor: baseTheme.colors.white,
 };

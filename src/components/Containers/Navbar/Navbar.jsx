@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ReorderThree } from "@styled-icons/ionicons-outline/ReorderThree";
-import { Cross } from "@styled-icons/entypo/Cross";
 import PropTypes from "prop-types";
 
 import { Text } from "../../Texts";
 import { Button } from "../../Inputs";
+import Open from "../../../assets/open-hamburger.svg";
+import Close from "../../../assets/close-hamburger.svg";
 import PumpLogo from "../../../assets/pump-logo.svg";
 import { baseTheme } from "../../../theme";
 import { CONSTANTS, media } from "../../../utils";
@@ -30,8 +30,8 @@ export const Navbar = ({
       <LogoContainer onClick={handleClick}>
         {/* TODO: CLICK IS TO HOME PAGE*/}
         <PumpImg src={PumpLogo} alt="Pump Logo" />
-        {!isHidden && <Icon as={ReorderThree} />}
-        {!!isHidden && <Icon as={Cross} />}
+        {!isHidden && <Icon src={Open} alt="Hamburgeer" />}
+        {!!isHidden && <Icon src={Close} alt="Cross" />}
       </LogoContainer>
       <Container isHidden={isHidden}>
         <ResourcesContainer>
@@ -42,7 +42,7 @@ export const Navbar = ({
                 {resource}
               </Resource>
             ))}
-          <SButton style={{ marginLeft: "10px" }}>{DONATE}</SButton>
+          <SButton>{DONATE}</SButton>
         </ResourcesContainer>
       </Container>
     </NavbarContainer>
@@ -50,40 +50,40 @@ export const Navbar = ({
 };
 
 const NavbarContainer = styled.div`
-    ${({ theme }) => `
+  ${({ theme }) => `
           font-family: ${theme.font.josefin};
           font-size: ${theme.size.default};
           padding: 2rem 4.5rem;
           display: flex;
           justify-content: space-between;
       `};
-    ${props => `
+  ${(props) => `
         background-color: ${props.backgroundColor};
         color: ${props.fontColor};
     `};
-    ${media(
-      "tablet",
-      `
+  ${media(
+    "tablet",
+    `
           flex-direction: column;
           `
-    )};
-    ${media(
-      "mobile",
-      `
+  )};
+  ${media(
+    "mobile",
+    `
         padding: 1rem 2rem;
         `
-    )}
+  )}
 `;
 const LogoContainer = styled.div`
-    ${media(
-      "tablet",
-      `
+  ${media(
+    "tablet",
+    `
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             padding-bottom: 20px;
             `
-    )};
+  )};
 `;
 const Container = styled.div`
   display: flex;
@@ -118,7 +118,7 @@ const ResourcesContainer = styled.div`
   )};
 `;
 const Resource = styled(Text)`
-    ${({ theme }) => `
+  ${({ theme }) => `
         padding: 0 20px;
 
         :hover {
@@ -126,28 +126,39 @@ const Resource = styled(Text)`
             color: ${theme.colors.yellow};
         }
     `};
-    color: ${props => props.fontColor};
+  ${media(
+    "tablet",
+    `
+          padding: 0;
+          `
+  )};
+  color: ${(props) => props.fontColor};
 `;
-const Icon = styled.svg`
-  width: 70px;
-  height: 60px;
-  opacity: 0.8;
+const Icon = styled.img`
+  width: 30px;
+  height: 30px;
   display: none;
   ${media(
     "tablet",
     `
           display: flex;
           cursor: pointer;
+          margin-top: 10px;
           opacity: 1;
+          :hover {
+            opacity: 0.8;
+          }
           `
   )};
 `;
 const SButton = styled(Button)`
+  margin-left: "10px";
   ${media(
     "tablet",
     `
           margin-top: 10px;
           margin-bottom: 20px;
+          margin-left: 0;
           `
   )};
 `;
