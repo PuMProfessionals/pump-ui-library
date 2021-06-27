@@ -19,7 +19,7 @@ export const Navbar = ({
   fontColor = baseTheme.colors.white,
   ...props
 }) => {
-  const [isHidden, setIsHidden] = useState(true);
+  const [isHidden, setIsHidden] = useState(false);
   const handleClick = () => setIsHidden(!isHidden);
   return (
     <NavbarContainer
@@ -30,8 +30,8 @@ export const Navbar = ({
       <LogoContainer onClick={handleClick}>
         {/* TODO: CLICK IS TO HOME PAGE*/}
         <PumpImg src={PumpLogo} alt="Pump Logo" />
-        {!!isHidden && <Icon as={ReorderThree}/>}
-        {!isHidden && <Icon as={Cross} />}
+        {!isHidden && <Icon as={ReorderThree} />}
+        {!!isHidden && <Icon as={Cross} />}
       </LogoContainer>
       <Container isHidden={isHidden}>
         <ResourcesContainer>
@@ -46,103 +46,114 @@ export const Navbar = ({
         </ResourcesContainer>
       </Container>
     </NavbarContainer>
-  )
+  );
 };
 
 const NavbarContainer = styled.div`
-  ${({ theme, fontColor }) => `
-        font-family: ${theme.font.josefin};
-        font-size: ${theme.size.default};
-        background-color: #465678;
-        color: ${fontColor};
-        padding: 2rem 4.5rem;
-        display: flex;
-        justify-content: space-between;
+    ${({ theme }) => `
+          font-family: ${theme.font.josefin};
+          font-size: ${theme.size.default};
+          padding: 2rem 4.5rem;
+          display: flex;
+          justify-content: space-between;
+      `};
+    ${props => `
+        background-color: ${props.backgroundColor};
+        color: ${props.fontColor};
     `};
-  ${media(
-    "tablet",
-    `
-        flex-direction: column;
+    ${media(
+      "tablet",
+      `
+          flex-direction: column;
+          `
+    )};
+    ${media(
+      "mobile",
+      `
+        padding: 1rem 2rem;
         `
-  )};
+    )}
 `;
 const LogoContainer = styled.div`
     ${media(
       "tablet",
       `
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          padding-bottom: 20px;
-          `
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            `
     )};
 `;
 const Container = styled.div`
-    display: flex;
-    align-items: center;
-    ${media(
-      "tablet",
-      `
+  display: flex;
+  align-items: center;
+  ${media(
+    "tablet",
+    `
           flex-direction: column;
           align-items: flex-start;
-          display: ${props => props.isHidden ? 'none' : 'flex'};
           `
-    )};
+  )};
+  // props does not work within media function
+  @media only screen and (max-width: 900px) {
+    display: ${(props) => (props.isHidden ? "flex" : "none")};
+  }
 `;
 const PumpImg = styled.img`
-    width: 80px;
-    padding-top: 15px;
-    :hover {
-      cursor: pointer;
-    }
+  width: 80px;
+  padding-top: 15px;
+  :hover {
+    cursor: pointer;
+  }
 `;
 const ResourcesContainer = styled.div`
-    display: flex;
-    justify-content: space-evenly;
-    ${media(
-      "tablet",
-      `
+  display: flex;
+  justify-content: space-evenly;
+  ${media(
+    "tablet",
+    `
           flex-direction: column;
           `
-    )};
+  )};
 `;
 const Resource = styled(Text)`
-  ${({ theme, fontColor }) => `
-      color: ${fontColor};
-      padding: 0 20px;
+    ${({ theme }) => `
+        padding: 0 20px;
 
-      :hover {
-          cursor: pointer;
-          color: ${theme.colors.yellow};
-      }
-  `};
+        :hover {
+            cursor: pointer;
+            color: ${theme.colors.yellow};
+        }
+    `};
+    color: ${props => props.fontColor};
 `;
 const Icon = styled.svg`
-    width: 70px;
-    height: 60px;
-    opacity: 0.8;
-    display: none;
-    ${media(
-      "tablet",
-      `
+  width: 70px;
+  height: 60px;
+  opacity: 0.8;
+  display: none;
+  ${media(
+    "tablet",
+    `
           display: flex;
           cursor: pointer;
           opacity: 1;
           `
-    )};
+  )};
 `;
 const SButton = styled(Button)`
-    ${media(
-      "tablet",
-      `
+  ${media(
+    "tablet",
+    `
           margin-top: 10px;
           margin-bottom: 20px;
           `
-    )};
+  )};
 `;
 
 Navbar.propTypes = {
   backgroundColor: PropTypes.string,
   fontColor: PropTypes.string,
-  isHidden: PropTypes.bool
+  isHidden: PropTypes.bool,
 };

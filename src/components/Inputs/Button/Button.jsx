@@ -2,11 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-export const Button = ({
-  isInverted = true,
-  children,
-  ...props
-}) => (
+export const Button = ({ isInverted = true, children, ...props }) => (
   <SButton isInverted={isInverted} {...props}>
     {children}
   </SButton>
