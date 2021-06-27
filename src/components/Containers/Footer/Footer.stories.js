@@ -9,5 +9,4 @@ export default {
 const Template = (args) => <Footer {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-};
+Primary.args = {};
