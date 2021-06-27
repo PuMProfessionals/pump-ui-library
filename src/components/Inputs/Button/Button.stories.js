@@ -19,5 +19,5 @@ Primary.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
   children: "Learn More",
-  isInverted: false
+  isInverted: false,
 };
