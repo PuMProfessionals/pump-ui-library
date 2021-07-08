@@ -12,13 +12,22 @@ export const TopSection = ({ ...props }) => (
       <Graphic src={SideGraphic} alt="Graphic" />
     </MobileGraphic>
     <FirstColumn>
-      <JosefinTitle size="xxlarge" bold="true" >Prospective Medical Professionals</JosefinTitle>
-      <SText size="default" >A registered charity dedicated to connecting aspiring students to health sciences opportunities</SText>
-      <SButton><ButtonText size="default" bold="true" >DONATE</ButtonText></SButton>
+      <JosefinTitle size="xxlarge" bold="true">
+        Prospective Medical Professionals
+      </JosefinTitle>
+      <SText size="default">
+        A registered charity dedicated to connecting aspiring students to health
+        sciences opportunities
+      </SText>
+      <SButton>
+        <ButtonText size="default" bold="true">
+          DONATE
+        </ButtonText>
+      </SButton>
     </FirstColumn>
-      <SecondColumn>
-        <Graphic src={SideGraphic} alt="Graphic" />
-      </SecondColumn>
+    <SecondColumn>
+      <Graphic src={SideGraphic} alt="Graphic" />
+    </SecondColumn>
   </MainContainer>
 );
 
@@ -70,8 +79,7 @@ const Graphic = styled.img`
   height: auto;
 `;
 
-const SButton = styled(Button)`
-`;
+const SButton = styled(Button)``;
 
 const FirstColumn = styled.div`
   flex: 0 0 35%;
@@ -96,12 +104,12 @@ const SecondColumn = styled.div`
 `;
 
 const MobileGraphic = styled(FirstColumn)`
-    display: none;
-    width: 100%;
-    ${media(
-      "mobile",
-      `
+  display: none;
+  width: 100%;
+  ${media(
+    "mobile",
+    `
           display: block;
           `
-    )};
+  )};
 `;
