@@ -14,8 +14,6 @@ export const baseTheme = {
     h3: "1.3rem",
     defaultLarger: "1.5rem",
     large: "2.5rem",
-    xlarge: "3em",
-    xxlarge: "4.5rem",
   },
   radius: {
     default: "8px",

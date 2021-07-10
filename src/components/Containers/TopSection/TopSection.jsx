@@ -1,32 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 
-import SideGraphic from "../../../assets/top-section-graphic.svg";
+import TitleGraphic from "../../../assets/home/top-section-graphic.svg";
 import { media } from "../../../utils";
 import { Text } from "../../Texts";
 import { Button } from "../../Inputs";
 
 export const TopSection = ({ ...props }) => (
   <MainContainer {...props}>
-    <MobileGraphic>
-      <Graphic src={SideGraphic} alt="Graphic" />
-    </MobileGraphic>
     <FirstColumn>
-      <JosefinTitle size="xxlarge" bold="true">
+      <JosefinTitle size="4.5em" bold="true">
         Prospective Medical Professionals
       </JosefinTitle>
       <SText size="default">
         A registered charity dedicated to connecting aspiring students to health
         sciences opportunities
       </SText>
-      <SButton>
+      <Button>
         <ButtonText size="default" bold="true">
           DONATE
         </ButtonText>
-      </SButton>
+      </Button>
     </FirstColumn>
     <SecondColumn>
-      <Graphic src={SideGraphic} alt="Graphic" />
+      <Graphic
+        src={TitleGraphic}
+        alt="Title graphic - person with book, stethoscope, pills and syringe"
+      />
     </SecondColumn>
   </MainContainer>
 );
@@ -34,11 +34,19 @@ export const TopSection = ({ ...props }) => (
 const MainContainer = styled.div`
   display: flex;
   margin: 5em;
+  flex-wrap: nowrap;
+  flex-direction: row;
   ${media(
     "mobile",
     `
         margin: 1em;
-        flex-direction: column;
+        flex-direction: column-reverse;
+        `
+  )};
+  ${media(
+    "tablet",
+    `
+        margin: 1em;
         `
   )};
 `;
@@ -51,6 +59,12 @@ const SText = styled(Text)`
   `};
   ${media(
     "mobile",
+    `
+        line-height: 1.3;
+        `
+  )};
+  ${media(
+    "tablet",
     `
         line-height: 1.3;
         `
@@ -68,6 +82,18 @@ const JosefinTitle = styled(SText)`
         font-size: 2.5rem;
         `
   )};
+  ${media(
+    "tablet",
+    `
+        font-size: 2.5rem;
+        `
+  )};
+  ${media(
+    "laptop",
+    `
+        font-size: 2.5rem;
+        `
+  )};
 `;
 
 const ButtonText = styled(SText)`
@@ -79,12 +105,16 @@ const Graphic = styled.img`
   height: auto;
 `;
 
-const SButton = styled(Button)``;
-
 const FirstColumn = styled.div`
   flex: 0 0 35%;
   ${media(
     "mobile",
+    `
+        flex: 1 0 0;
+        `
+  )};
+  ${media(
+    "tablet",
     `
         flex: 1 0 0;
         `
@@ -97,19 +127,13 @@ const SecondColumn = styled.div`
   ${media(
     "mobile",
     `
-        flex: 0 0 0;
-        display: none;
+        padding-left: 0;
         `
   )};
-`;
-
-const MobileGraphic = styled(FirstColumn)`
-  display: none;
-  width: 100%;
   ${media(
-    "mobile",
+    "tablet",
     `
-          display: block;
-          `
+        padding-left: 0;
+        `
   )};
 `;
