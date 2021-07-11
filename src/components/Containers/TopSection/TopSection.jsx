@@ -36,15 +36,15 @@ const MainContainer = styled.div`
   margin: 5em;
   flex-wrap: nowrap;
   flex-direction: row;
+  align-items: center;
   ${media(
-    "mobile",
+    700,
     `
-        margin: 1em;
         flex-direction: column-reverse;
         `
   )};
   ${media(
-    "tablet",
+    800,
     `
         margin: 1em;
         `
@@ -57,12 +57,6 @@ const SText = styled(Text)`
     color: ${theme.colors.navy};
     margin-top: 0;
   `};
-  ${media(
-    "mobile",
-    `
-        line-height: 1.3;
-        `
-  )};
   ${media(
     "tablet",
     `
@@ -77,19 +71,7 @@ const JosefinTitle = styled(SText)`
     margin: 1em 0 0 0;
   `};
   ${media(
-    "mobile",
-    `
-        font-size: 2.5rem;
-        `
-  )};
-  ${media(
-    "tablet",
-    `
-        font-size: 2.5rem;
-        `
-  )};
-  ${media(
-    "laptop",
+    1200,
     `
         font-size: 2.5rem;
         `
@@ -108,12 +90,6 @@ const Graphic = styled.img`
 const FirstColumn = styled.div`
   flex: 0 0 35%;
   ${media(
-    "mobile",
-    `
-        flex: 1 0 0;
-        `
-  )};
-  ${media(
     "tablet",
     `
         flex: 1 0 0;
@@ -125,15 +101,21 @@ const SecondColumn = styled.div`
   padding-left: 10em;
   flex: 1;
   ${media(
-    "mobile",
+    1200,
     `
-        padding-left: 0;
+        padding-left: 5em;
         `
   )};
   ${media(
     "tablet",
     `
-        padding-left: 0;
+        padding-left: 2em;
+        `
+  )};
+  ${media(
+    700,
+    `
+        padding: 0 0 0 0;
         `
   )};
 `;
