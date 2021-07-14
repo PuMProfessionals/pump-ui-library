@@ -85,6 +85,12 @@ const ButtonText = styled(SText)`
 const Graphic = styled.img`
   width: 100%;
   height: auto;
+  ${media(
+    1200,
+    `
+        max-width: 400px;
+        `
+  )};
 `;
 
 const FirstColumn = styled.div`
