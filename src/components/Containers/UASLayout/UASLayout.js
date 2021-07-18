@@ -6,16 +6,16 @@ import { Text } from "../../Texts";
 import { baseTheme } from "../../../theme";
 import { media } from "../../../utils";
 
-export const UASLayout = ({ ...props }) => (
-  <div>
+export const UASLayout = ({ titleText, graphic, descriptionText, ...props }) => (
+  <div {...props}>
     <TitleSection>
       <Title size={baseTheme.size.h2} bold="true">
-        {props.titleText}
+        {titleText}
       </Title>
     </TitleSection>
     <InfoSection>
-      <Graphic src={props.graphic} />
-      <Description>{props.descriptionText}</Description>
+      <Graphic src={graphic} />
+      <Description>{descriptionText}</Description>
     </InfoSection>
   </div>
 );
@@ -25,7 +25,6 @@ const Title = styled(Text)`
       font-family: ${theme.font.josefin};
       color: ${theme.colors.black};
   `};
-  margin: 1rem 1rem;
 `;
 
 const Description = styled(Text)`
@@ -35,32 +34,31 @@ const Description = styled(Text)`
 const Graphic = styled.img`
   width: 300px;
   height: 240px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: black;
-  margin: 1rem 1rem;
+  border: 2px solid black;
+  margin-right: 5%;
   ${media(
-    "tablet",
+    700,
     `
-    width: 90%;
+        margin: 0px;
     `
   )}
 `;
 
 const TitleSection = styled.div`
-  width: 100%;
+  margin: 5% 5% 0%;
 `;
 
 const InfoSection = styled.div`
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  align: start;
   ${media(
-    "tablet",
+    700,
     `
         flex-direction: column;
         align-items: center;
-        `
+    `
   )}
 `;
 
