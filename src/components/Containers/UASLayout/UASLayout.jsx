@@ -35,7 +35,7 @@ const Graphic = styled.img`
   width: 300px;
   height: 240px;
   border: 2px solid black;
-  margin-right: 5%;
+  margin-right: 3rem;
   ${media(
     700,
     `
@@ -45,14 +45,14 @@ const Graphic = styled.img`
 `;
 
 const TitleSection = styled.div`
-  margin: 5% 5% 0%;
+  margin: 2rem 2.5rem 0;
 `;
 
 const InfoSection = styled.div`
   display: flex;
-  padding-left: 5%;
-  padding-right: 5%;
-  align: start;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  align-items: center;
   ${media(
     700,
     `
