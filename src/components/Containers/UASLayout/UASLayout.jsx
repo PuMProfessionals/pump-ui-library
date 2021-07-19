@@ -65,5 +65,5 @@ const InfoSection = styled.div`
 UASLayout.propTypes = {
   titleText: PropTypes.string,
   descriptionText: PropTypes.string,
-  graphic: PropTypes.string
+  graphic: PropTypes.string,
 };
