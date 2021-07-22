@@ -4,15 +4,32 @@ import PlaceholderGraphic from "../../../assets/introductions-mdx/code-brackets.
 
 export default {
   title: "Containers/StudentResource",
-  component: StudentResource,
+  component: StudentResource
 };
 
-const Template = (args) => <StudentResource {...args} />;
+const Template = args => <StudentResource {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
   titleText: "PuMP Direct",
   descriptionText:
     "Browse and filter our database of local opportunities in healthcare",
-  graphic: PlaceholderGraphic,
+  buttons: [
+    {
+      color: "yellow",
+      text: "Browse opportunities",
+      link: "https://google.com"
+    },
+    {
+      color: "yellow",
+      text: "Join our community of 800+ Students",
+      link: "https://google.com"
+    },
+    {
+      color: "yellow",
+      text: "Learn more",
+      link: "https://google.com"
+    }
+  ],
+  graphic: PlaceholderGraphic
 };
