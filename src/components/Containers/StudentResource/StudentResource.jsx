@@ -3,7 +3,12 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import { Text } from "../../Texts";
-export const StudentResource = ({ titleText, descriptionText, graphic, ...props }) => (
+export const StudentResource = ({
+  titleText,
+  descriptionText,
+  graphic,
+  ...props
+}) => (
   <StudentResourceSection {...props}>
     <InfoSection>
       <Title>{titleText}</Title>
@@ -11,7 +16,7 @@ export const StudentResource = ({ titleText, descriptionText, graphic, ...props 
       {/* TODO: Button array (color, link, text) */}
       <Text>{descriptionText}</Text>
     </InfoSection>
-      <Graphic src={graphic} />
+    <Graphic src={graphic} />
   </StudentResourceSection>
 );
 
@@ -48,5 +53,5 @@ const InfoSection = styled.div`
 StudentResource.propTypes = {
   titleText: PropTypes.string,
   descriptionText: PropTypes.string,
-  graphic: PropTypes.string
+  graphic: PropTypes.string,
 };
