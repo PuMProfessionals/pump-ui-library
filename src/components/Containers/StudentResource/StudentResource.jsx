@@ -18,9 +18,9 @@ export const StudentResource = ({
       <Text>{descriptionText}</Text>
       <ButtonSection>
         {buttons.map(button => (
-          <Button key={button.text} backgroundColor={button.color}>
+          <SButton key={button.text} backgroundColor={button.color}>
             {button.text}
-          </Button>
+          </SButton>
         ))}
       </ButtonSection>
     </InfoSection>
@@ -59,10 +59,13 @@ const InfoSection = styled.div`
 `;
 
 const ButtonSection = styled.div`
-  /* top and bottom of buttons are touching */
   display: flex;
   justify-content: right;
   flex-flow: row wrap;
+`;
+
+const SButton = styled(Button)`
+  margin: 0.25rem;
 `;
 
 StudentResource.propTypes = {
