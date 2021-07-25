@@ -13,18 +13,18 @@ export const StudentResource = ({
   ...props
 }) => (
   <StudentResourceSection {...props}>
+    <Graphic src={graphic} />
     <InfoSection>
       <Title>{titleText}</Title>
       <Text>{descriptionText}</Text>
       <ButtonSection>
-        {buttons.map(button => (
+        {buttons.map((button) => (
           <SButton key={button.text} backgroundColor={button.color}>
             {button.text}
           </SButton>
         ))}
       </ButtonSection>
     </InfoSection>
-    <Graphic src={graphic} />
   </StudentResourceSection>
 );
 
@@ -53,14 +53,14 @@ const InfoSection = styled.div`
   width: 30%;
   display: flex;
   flex-direction: column;
-  text-align: right; /* TODO: change on image location, center on mobile */
-  margin-right: 5%; /* TODO: ternary for image location, margin-left */
+  text-align: left; /* TODO: change on image location, center on mobile */
+  margin-left: 5%; /* TODO: ternary for image location, margin-left */
   /* TODO: change text color based on background */
 `;
 
 const ButtonSection = styled.div`
   display: flex;
-  justify-content: right;
+  justify-content: left;
   flex-flow: row wrap;
 `;
 
@@ -72,5 +72,5 @@ StudentResource.propTypes = {
   titleText: PropTypes.string,
   descriptionText: PropTypes.string,
   buttons: PropTypes.Object,
-  graphic: PropTypes.string
+  graphic: PropTypes.string,
 };
