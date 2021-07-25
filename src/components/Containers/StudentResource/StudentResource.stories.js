@@ -26,10 +26,11 @@ Primary.args = {
       link: "https://google.com",
     },
     {
-      color: "yellow",
+      color: "white",
       text: "Learn more",
       link: "https://google.com",
     },
   ],
   graphic: PlaceholderGraphic,
+  graphicLeft: true,
 };
