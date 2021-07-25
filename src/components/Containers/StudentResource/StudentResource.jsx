@@ -20,9 +20,9 @@ export const StudentResource = ({
       <Text>{descriptionText}</Text>
       <ButtonSection graphicLeft={graphicLeft}>
         {buttons.map((button) => (
-          <SButton key={button.text} backgroundColor={button.color}>
-            {button.text}
-          </SButton>
+          <a key={button.text} href={button.link}>
+            <SButton backgroundColor={button.color}>{button.text}</SButton>
+          </a>
         ))}
       </ButtonSection>
     </InfoSection>
@@ -38,15 +38,16 @@ const Title = styled.h2`
 `;
 
 const Graphic = styled.img`
-  width: 550px; /* TODO: maybe width and height prop? */
-  height: 350px;
-  border: 2px solid black; /* TODO: curved border */
+  /* TODO: width and height as props on web repo */
+  width: 35%;
+  height: 300px;
+  border: 2px solid black; /* TODO: curved border? */
 `;
 
 const StudentResourceSection = styled.div`
   display: flex;
   ${({ graphicLeft }) => `
-  flex-direction: ${graphicLeft ? "row" : "row-reverse"}
+    flex-direction: ${graphicLeft ? "row" : "row-reverse"}
   `};
   align-items: center;
   justify-content: center;
@@ -54,12 +55,12 @@ const StudentResourceSection = styled.div`
 `;
 
 const InfoSection = styled.div`
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   ${({ graphicLeft }) => `
     text-align: ${graphicLeft ? "left" : "right"};
-    ${graphicLeft ? "margin-left: 5%" : "margin-right: 5%;"}
+    ${graphicLeft ? "margin-left: 8%" : "margin-right: 8%;"}
   `};
   /* TODO: no margin, center text on mobile */
   /* TODO: change text color based on background */
