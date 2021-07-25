@@ -81,8 +81,7 @@ const InfoSection = styled.div`
       margin: 5% 0 0;
       width: 85%;
     `
-  )}
-  /* TODO: change text color based on background */
+  )}/* TODO: change text color based on background */
 `;
 
 const ButtonSection = styled.div`

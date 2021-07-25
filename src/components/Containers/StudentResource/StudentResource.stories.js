@@ -18,17 +18,17 @@ Primary.args = {
     {
       color: "yellow",
       text: "Browse opportunities",
-      link: "https://google.com",
+      link: "http://example.org/",
     },
     {
       color: "yellow",
       text: "Join our community of 800+ Students",
-      link: "https://google.com",
+      link: "http://example.org/",
     },
     {
       color: "white",
       text: "Learn more",
-      link: "https://google.com",
+      link: "http://example.org/",
     },
   ],
   graphic: PlaceholderGraphic,
