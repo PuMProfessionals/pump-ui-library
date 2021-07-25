@@ -11,15 +11,15 @@ export const StudentResource = ({
   descriptionText,
   buttons,
   graphic,
-  graphicLeft,
+  isGraphicLeft = true,
   ...props
 }) => (
-  <StudentResourceSection graphicLeft={graphicLeft} {...props}>
+  <StudentResourceSection isGraphicLeft={isGraphicLeft} {...props}>
     <Graphic src={graphic} />
-    <InfoSection graphicLeft={graphicLeft}>
+    <InfoSection isGraphicLeft={isGraphicLeft}>
       <Title>{titleText}</Title>
       <Text>{descriptionText}</Text>
-      <ButtonSection graphicLeft={graphicLeft}>
+      <ButtonSection isGraphicLeft={isGraphicLeft}>
         {buttons.map((button) => (
           <a key={button.text} href={button.link}>
             <SButton backgroundColor={button.color}>{button.text}</SButton>
@@ -53,8 +53,8 @@ const Graphic = styled.img`
 
 const StudentResourceSection = styled.div`
   display: flex;
-  ${({ graphicLeft }) => `
-    flex-direction: ${graphicLeft ? "row" : "row-reverse"}
+  ${({ isGraphicLeft }) => `
+    flex-direction: ${isGraphicLeft ? "row" : "row-reverse"}
   `};
   align-items: center;
   justify-content: center;
@@ -70,9 +70,9 @@ const InfoSection = styled.div`
   width: 40%;
   display: flex;
   flex-direction: column;
-  ${({ graphicLeft }) => `
-    text-align: ${graphicLeft ? "left" : "right"};
-    ${graphicLeft ? "margin-left: 8%" : "margin-right: 8%;"}
+  ${({ isGraphicLeft }) => `
+    text-align: ${isGraphicLeft ? "left" : "right"};
+    ${isGraphicLeft ? "margin-left: 8%" : "margin-right: 8%;"}
   `};
   ${media(
     800,
@@ -86,8 +86,8 @@ const InfoSection = styled.div`
 
 const ButtonSection = styled.div`
   display: flex;
-  ${({ graphicLeft }) => `
-    justify-content: ${graphicLeft ? "left" : "right"}
+  ${({ isGraphicLeft }) => `
+    justify-content: ${isGraphicLeft ? "left" : "right"}
   `};
   flex-flow: row wrap;
   ${media(
@@ -99,7 +99,7 @@ const ButtonSection = styled.div`
 `;
 
 const SButton = styled(Button)`
-  margin: 0.25rem;
+  margin: 0.5rem;
 `;
 
 StudentResource.propTypes = {
@@ -107,5 +107,5 @@ StudentResource.propTypes = {
   descriptionText: PropTypes.string,
   buttons: PropTypes.Object,
   graphic: PropTypes.string,
-  graphicLeft: PropTypes.boolean,
+  isGraphicLeft: PropTypes.boolean,
 };

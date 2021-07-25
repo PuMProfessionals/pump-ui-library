@@ -32,5 +32,5 @@ Primary.args = {
     },
   ],
   graphic: PlaceholderGraphic,
-  graphicLeft: true,
+  isGraphicLeft: true,
 };
