@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import { Text } from "../../Texts";
 import { Button } from "../../Inputs";
+import { media } from "../../../utils";
 
 export const StudentResource = ({
   titleText,
@@ -40,8 +41,14 @@ const Title = styled.h2`
 const Graphic = styled.img`
   /* TODO: width and height as props on web repo */
   width: 35%;
-  height: 300px;
+  height: auto;
   border: 2px solid black; /* TODO: curved border? */
+  ${media(
+    "800",
+    `
+      width: 70%;
+    `
+  )}
 `;
 
 const StudentResourceSection = styled.div`
@@ -51,7 +58,12 @@ const StudentResourceSection = styled.div`
   `};
   align-items: center;
   justify-content: center;
-  /* TODO: flex column on mobile */
+  ${media(
+    800,
+    `
+      flex-direction: column;
+    `
+  )}
 `;
 
 const InfoSection = styled.div`
@@ -62,7 +74,14 @@ const InfoSection = styled.div`
     text-align: ${graphicLeft ? "left" : "right"};
     ${graphicLeft ? "margin-left: 8%" : "margin-right: 8%;"}
   `};
-  /* TODO: no margin, center text on mobile */
+  ${media(
+    800,
+    `
+      text-align: center;
+      margin: 5% 0 0;
+      width: 85%;
+    `
+  )}
   /* TODO: change text color based on background */
 `;
 
@@ -71,8 +90,13 @@ const ButtonSection = styled.div`
   ${({ graphicLeft }) => `
     justify-content: ${graphicLeft ? "left" : "right"}
   `};
-  /* TODO: center buttons on mobile */
   flex-flow: row wrap;
+  ${media(
+    800,
+    `
+      justify-content: center;
+    `
+  )}
 `;
 
 const SButton = styled(Button)`
